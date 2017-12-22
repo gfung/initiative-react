@@ -45,8 +45,8 @@ class OrderedList extends Component {
   sort(){
     this.setState({
       anArray: this.state.anArray.sort((a,b)=>{
-        if (a.number > b.number) {return 1}
-        if (a.number < b.number) {return -1}
+        if (a.number > b.number) {return -1}
+        if (a.number < b.number) {return 1}
         return 0
       })
     })
