@@ -45,15 +45,14 @@ class OrderedList extends Component {
   sort(){
     this.setState({
       anArray: this.state.anArray.sort((a,b)=>{
-        if (a.number > b.number) {return 1}
-        if (a.number < b.number) {return -1}
+        if (a.number > b.number) {return -1}
+        if (a.number < b.number) {return 1}
         return 0
       })
     })
   }
 
   remove(data){
-    console.log(data)
     let tempArray = this.state.anArray
     for (let i = 0;i < tempArray.length;i++){
       if(tempArray[i].id === data){
@@ -67,7 +66,7 @@ class OrderedList extends Component {
 
   add(){
     let name = document.getElementById('name').value;
-    let number = document.getElementById('number').value;
+    let number = parseInt(document.getElementById('number').value);
     let tempid = this.state.id+1;
     
     this.setState({
